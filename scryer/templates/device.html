@@ -1,0 +1,9 @@
+<!doctype html>
+<title>{{ name }}</title>
+<h3>{{ name }}</h3>
+Battery: {{ battery }}%<br/>
+Status Code: {{ device_status }}<br/>
+<a href="https://www.google.com/maps?q={{ location.latitude }},{{ location.longitude }}">Location:</a>
+{{ location.latitude }}, {{ location.longitude }} within {{ location.horizontalAccuracy }} meters at {{ location.timeStamp }}
+<br/>
+<a href="{{ url_for('sound', account_id=account_id, device_id=device_id) }}">Play Sound</a>

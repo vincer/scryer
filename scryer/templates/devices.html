@@ -1,0 +1,7 @@
+<!doctype html>
+<title>Devices</title>
+<ul>
+{% for device_id, device in devices.iteritems() %}
+   <li><a href="{{ url_for('device', account_id=account_id, device_id=device_id|urlencode2) }}">{{ device.status().deviceDisplayName }} -   {{ device.status().name }}</a></li>
+{% endfor %}
+</ul>

@@ -1,0 +1,22 @@
+<!doctype html>
+<title>{{ name }}</title>
+<h3>{{ name }}</h3>
+Sound playing: {{ sound_playing }}<br/>
+
+<script>
+   var xmlHttp = new XMLHttpRequest();
+
+   function put(url) {
+      var mimeType = "application/json";
+      xmlHttp.open('PUT', url, false);
+      xmlHttp.setRequestHeader('Content-Type', mimeType);
+      xmlHttp.send("{ 'sound': true }");
+   }
+</script>
+
+<!-- This won't update the current page with the result... -->
+
+<form method="POST" name="Play Sound!" action="">
+   <input type="button" value="Play Sound!"
+          onclick="put('{{ url_for('sound', account_id=account_id, device_id=device_id) }}')">
+</form>

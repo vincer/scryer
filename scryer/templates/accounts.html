@@ -1,0 +1,7 @@
+<!doctype html>
+<title>Accounts</title>
+<ul>
+{% for account_id, account in accounts.iteritems() %}
+   <li><a href="{{ url_for('account', account_id=account_id) }}">{{ account.name }} -  {{ account.apple_id }}</a></li>
+{% endfor %}
+</ul>
